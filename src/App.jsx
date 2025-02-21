@@ -7,13 +7,14 @@ import { MostrarResultado } from "./components/MostrarResultado";
 
 function App() {
   const [resultado, setresultado] = useState([]);
+  const [error, seterror] = useState(false);
   console.log(resultado, "componente padre");
 
   return (
     <>
       <h1>Proyecto</h1>
-      <Busqueda setresultado={setresultado} />
-      <MostrarResultado resultado={resultado} />
+      <Busqueda seterror={seterror} setresultado={setresultado} />
+      <MostrarResultado error={error} resultado={resultado} />
     </>
   );
 }
